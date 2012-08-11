@@ -12,22 +12,21 @@
 	<meta name="author" content="">
 
 	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+<?php  $baseurlloc = base_url();?>
+	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/bootstrap.min.css">
 	<style>
 	body {
 	  padding-top: 60px;
 	  padding-bottom: 40px;
 	}
 	</style>
-	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/style.css">
 
-	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+	<script src="<?php  echo $baseurlloc;?>/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -36,13 +35,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="#">Digital Diary</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="#">Enter</a></li>
               <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+              </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -50,50 +48,46 @@
 
     <div class="container">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Login</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-      </div>
 
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span4">
-          <h2>Heading</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+        <div class="offset4 span4">
+		<input type="email" placeholder="Enter your Email" />
         </div>
-        <div class="span4">
-          <h2>Heading</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div>
+	  <br/>
+      <div class="row">
+        <div class="offset1 span3">
+		<a href="flickr#" ><img src="<?php  echo $baseurlloc;?>/img/connect-flickr.png" /></a>
+		</div>
+		<div class="span2.2">
+		<a href="instagram#" ><img src="<?php  echo $baseurlloc;?>/img/connect-instagram.png" /></a>
+		</div>
+		<div class="span3">
+		<a href="foursquare#" ><img src="<?php  echo $baseurlloc;?>/img/connect-foursquare.png" /></a>
         </div>
       </div>
 
       <hr>
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; OpenHack 2012</p>
       </footer>
 
     </div> <!-- /container -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="<?php  echo $baseurlloc;?>/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-<script src="js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="<?php  echo $baseurlloc;?>/js/libs/bootstrap/bootstrap.min.js"></script>
 
-<script src="js/script.js"></script>
+<script src="<?php  echo $baseurlloc;?>/js/script.js"></script>
 <script>
+/*
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
+	*/
 </script>
 
 </body>
