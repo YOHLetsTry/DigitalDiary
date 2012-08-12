@@ -88,13 +88,37 @@
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
 	*/
-	
+	var mobileyes="";
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i) ? true : false;
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) ? true : false;
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+    }
+};
+
+		$(document).ready(function(){
+			if( isMobile.any() ) 
+			{
+				mobileyes= "/mobile";
+			}
+		});
 	function loadAuth(provider, oauth)
 	{
 		var base_url = 'http://dgtldiary.phpfogapp.com/index.php/auth/'+oauth;
 		var emailval = $('#usr_email').val();
 		console.log(emailval);
-		window.location = base_url+'/'+provider+'/'+escape(emailval);
+		window.location = base_url+'/'+provider+'/'+escape(emailval)+mobileyes;
 	}
 </script>
 
