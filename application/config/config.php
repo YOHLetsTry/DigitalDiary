@@ -26,7 +26,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -126,7 +126,7 @@ $config['subclass_prefix'] = 'MY_';
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.@:_\-';
 
 
 /*
@@ -357,6 +357,13 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+$config['twitter_key'] = 'HSrsiM0Z8UvUS08UmdnEg';
+$config['twitter_secret'] = 'MGaLV1ONs4HWVVM2Oba9rjkPKjoVsN3sWg5FnMKX8';
 
+$config['flickr_key'] = '9f8f527cf39bc8bffdf3dfb17179f11d';
+$config['flickr_secret'] = 'd0740f41e26ff657';
+
+$config['instagram_key'] = '592b39ed110943d6be7d6d65b0ced139';
+$config['instagram_secret'] = 'c9cd7cc0b6634ea2ace49faa21d37c65';
 /* End of file config.php */
 /* Location: ./application/config/config.php */

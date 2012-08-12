@@ -12,16 +12,34 @@
 	<meta name="author" content="">
 
 	<meta name="viewport" content="width=device-width">
-<?php  $baseurlloc = base_url();?>
+<?php  $baseurlloc = 'http://dgtldiary.phpfogapp.com';?>
 	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/bootstrap.min.css">
 	<style>
 	body {
 	  padding-top: 60px;
 	  padding-bottom: 40px;
 	}
+			html, body {
+				height:90%;
+				margin: 0px;
+			}
+			#timeline-embed{
+				margin:0px !important;
+				border:0px solid #CCC !important;
+				padding:0px !important;
+				-webkit-border-radius:0px !important;
+				-moz-border-radius:0px !important;
+				border-radius:0px !important;
+				-moz-box-shadow:0 0px 0px rgba(0, 0, 0, 0.25) !important;
+				-webkit-box-shadow:0 0px 0px rgba(0, 0, 0, 0.25) !important;
+				box-shadow:0px 0px 0px rgba(0, 0, 0, 0.25) !important;
+			}
+
+
 	</style>
 	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/bootstrap-responsive.min.css">
 	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/style.css">
+	<link rel="stylesheet" href="<?php  echo $baseurlloc;?>/css/timeline.css">
 
 	<script src="<?php  echo $baseurlloc;?>/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
@@ -47,28 +65,9 @@
     </div>
 
     <div class="container">
+<div id="timeline-embed"></div>
+		
 
-		<br/><br/><br/><br/>
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="offset4 span4">
-		<input type="email" placeholder="Enter your Email" id="usr_email"/>
-        </div>
-      </div>
-	  <br/>
-      <div class="row">
-        <div class="offset1 span3">
-		<a href="#" ><img src="<?php  echo $baseurlloc;?>/img/connect-flickr.png" onclick="loadAuth('flickr','oauth')"/></a>
-		</div>
-		<div class="span2.2">
-		<a href="#" ><img src="<?php  echo $baseurlloc;?>/img/connect-instagram.png" onclick="loadAuth('instagram','oauth2')"/></a>
-		</div>
-		<div class="span3">
-		<a href="#" ><img src="<?php  echo $baseurlloc;?>/img/connect-foursquare.png" onclick="loadAuth('foursquare','oauth2')"/></a>
-        </div>
-      </div>
-
-      <hr>
 
       <footer>
         <p>&copy; OpenHack 2012</p>
@@ -79,8 +78,9 @@
 <script>window.jQuery || document.write('<script src="<?php  echo $baseurlloc;?>/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
 <script src="<?php  echo $baseurlloc;?>/js/libs/bootstrap/bootstrap.min.js"></script>
-
+<script src="<?php  echo $baseurlloc;?>/js/timeline.js"></script>
 <script src="<?php  echo $baseurlloc;?>/js/script.js"></script>
+
 <script>
 /*
 	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
@@ -88,15 +88,17 @@
 	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 	s.parentNode.insertBefore(g,s)}(document,'script'));
 	*/
-	
-	function loadAuth(provider, oauth)
-	{
-		var base_url = 'http://dgtldiary.phpfogapp.com/index.php/auth/'+oauth;
-		var emailval = $('#usr_email').val();
-		console.log(emailval);
-		window.location = base_url+'/'+provider+'/'+escape(emailval);
-	}
+	var timelineobject={"timeline":{"headline":"Welcome to your Personal Diary","type":"default","text":"<p>Your history is very important, Atlast what else are you living for ?</p>","asset":{"media":"<?php echo "http://www.gravatar.com/avatar/".$emailmd5."?s=200&r=pg&d=mm";?>","credit":"YOH 2012","caption":"Digital Diary"},"date":[ <?php echo $pagejson;?> ]}};
+	console.log(timelineobject);
+	//var timelineobject = JSON.parse(timelinepages);
+			var timeline_config = {
+				width: 	"100%",
+				height: "100%",
+				source: timelineobject,
+				//start_at_end:	true,					//OPTIONAL
+				//hash_bookmark: true,					//OPTIONAL
+			}
 </script>
-
+<script type="text/javascript" src="<?php  echo $baseurlloc;?>/js/timeline-embed.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flickr</title>
+	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.1.1.css" />
+	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css" />
+	<script src="js/jquery.js"></script>
+
+	<script src="docs/_assets/js/jqm-docs.js"></script>
+	<script src="js/jquery.mobile-1.1.1.js"></script>
+	
+</head>
+<body>
+
+	
+	<script type="text/javascript">
+	var data = {"singam":[{"startDate":"2011,12,10","headline":"Headline Goes Here","text":"<p>Body text goes here, some HTML is OK........</p>","asset":{"media":"docs/_assets/images/connect-flickr.png"	,"credit":"Credit Name Goes Here","caption":"Caption text goes here"}},{"startDate":"2012,01,10","headline":"Headline2 Goes Here","text":"<p>Body2 text goes here, some HTML is OK oh really??!!</p>","asset":{"media":"docs/_assets/images/connect-instagram.png","credit":"Credit Name Goes Here","caption":"Caption text goes here"}},{"startDate":"2012,01,10","headline":"Headline2 Goes Here","text":"<p>Body2 text goes here, some HTML is OK oh really??!!</p>","asset":{"media":"docs/_assets/images/connect-instagram.png","credit":"Credit Name Goes Here","caption":"Caption text goes here"}},{"startDate":"2012,01,10","headline":"Headline2 Goes Here","text":"<p>Body2 text goes here, some HTML is OK oh really??!!</p>","asset":{"media":"docs/_assets/images/connect-instagram.png","credit":"Credit Name Goes Here","caption":"Caption text goes here"}}]};
+			console.log(data);
+	var pagehtml ="";		
+	data.singam.forEach(function(pageday,index)
+	{
+		pagehtml += '<div data-role="page" id="in'+index+'">';
+		pagehtml += '<div data-role="header"><h1>'+pageday.headline+'</h1></div>';
+		pagehtml += '<div data-role="content">';
+		pagehtml += '<img src="'+pageday.asset.media+'"/>'+pageday.text+'</div>';
+		pagehtml += '<div data-role="footer" data-theme="d">'+pageday.asset.caption+'</div>';
+		pagehtml += '<p><a href="#in'+(index+1)+'" data-role="button">Next</a></p>';
+		if(index!=0)
+		{
+		pagehtml += '<p><a href="#in'+(index-1)+'" data-role="button">Back</a></div></p>';
+		}
+		else
+		{
+		pagehtml += '</div>';
+		}
+		$('body').append(pagehtml);
+		
+	});
+	
+	
+	</script>
+			
+			
+
+	
+
+</div>
+</body>
+</html>
